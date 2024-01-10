@@ -1,7 +1,7 @@
 ## 复变函数级数理论
 ### 1. 复变项级数
 形如$f_1 + f_2 + ... + f_k = \sum_{k=1}^{\infty}f_k$的级数（其中$f_k = u_k + iv_k$）称为复级数。
-$$ \sum_{k=1}^{\infty} f_k = \sum_{k=1}{\infty}u_k + i\sum_{k=1}^{\infty}v_k $$
+$$ \sum_{k=1}^{\infty} f_k = \sum_{k=1}^{\infty}u_k + i\sum_{k=1}^{\infty}v_k $$
 
 部分和$F_n = \sum_{k=1}^{n} f_k$，若$lim_{n->\infty}F_n = F$存在且有限，则称$\sum_{k=1}^{\infty} f_k $收敛于$F = u + iv$，即 
 $$ \sum_{k=1}^{\infty} u_k = u$$
@@ -22,26 +22,59 @@ $$ \sum_{k=1}^{\infty} v_k = v$$
 
 两个绝对收敛的级数，可逐项相乘，仍收敛。  
 
-比值判别法（达朗贝尔判别法）:  
-若$\sum_{k=1}^{f_k}$的通项$f_k(k=1,2...)$满足：$$\lim_{k \rightarrow \infty} \frac{f_{k+1}}{f_k} = l$$  
-若 $l < 1$，则$\sum_{k=1}^{f_k}$绝对收敛； 若 $l > 1$，则$\sum_{k=1}^{f_k}$发散； 当 $l = 1$，则$\sum_{k=1}^{f_k}$的敛散性无法判断。
+**比值判别法（达朗贝尔判别法）**  
+若$\sum_{k=1}^{\infty}f_k$的通项$f_k(k=1,2...)$满足：$$\lim_{k \rightarrow \infty} \frac{f_{k+1}}{f_k} = l$$  
+若 $l < 1$，则$\sum_{k=1}^{\infty}f_k$绝对收敛； 若 $l > 1$，则$\sum_{k=1}^{\infty}f_k$发散； 当 $l = 1$，则$\sum_{k=1}^{\infty}f_k$的敛散性无法判断。
 
-高斯判别法
+**高斯判别法**  
 对于$ \sum_{k=1}^{\infty} f_k $，若$\frac{f_k}{f_{k+1}} = 1 + \frac{\mu}{k} + O(\frac{1}{k^{\lambda}}), \lambda > 0$
 
 若$Re\ \mu > 1$，则$\sum_{k=1}^{\infty}f_k$绝对收敛
 
 若$Re\ \mu <= 1$，则$\sum_{k=1}^{\infty}f_k$发散
 
+证明参考到了**P级数**
 
+**柯西根值判别法**  
+对$\sum_{k=1}^{\infty} f_k $ 若$lim_{k \rightarrow \infty} \sqrt[k]{|f_k|}$，则
 
+当 $ r > 1$，$\sum_{k=1}^{\infty} f_k$绝对收敛。
 
+当$ r < 1$，$\sum_{k=1}^{\infty} f_k$发散。
 
+当$ r = 1$，$\sum_{k=1}^{\infty} f_k$的敛散性
 
+**复变函数项级数**：形如$\sum_{k=1}^{\infty}f_k(z)$的级数。    
 
+**一致收敛性**：如在$\sigma$上存在函数$F(z)$，对任意$\epsilon > 0$，存在无关于$z$的自然数$N$，当$n > N$时，对任意：$$ |F(z) - F_n(z)| < \epsilon$$
+则称$\sum_{k=1}^{\infty} f_k(z)$一致收敛于$F(z)$
 
+一致收敛的复变函数项级数的性质，对$\sum_{k=1}^{\infty} f_k(z)$（一致收敛于$\sigma$）
 
+**1. 连续性**：若$f_k(z)$在$\sigma$上连续，则$\sum_k^{\infty} f_k(z) = F(z)$在$\sigma$上亦连续。
 
+**2**. 若$f_k(z)$在$l \in \sigma$曲线上连续可积，则$\sum_{k=1}^{\infty} f_k(z)$可逐项积分。$$ \int_l F(z)dz = \int_l(\sum_{k=1}^{\infty} f_k(z)dz$$
+
+**3.** 若$f_k(z)$ 在$\sigma$区域解析，且级数在$\sigma$内任一闭区域$\sigma'$一致收敛，则$\sum_{k=1}^{\infty} f_k(z) = F(z)$可逐项求导且$F(z)$上解析。$$ F_{(z)}^{(n)} = \sum_{k=1}^{\infty} f_k^{n}(z)$$
+
+**一致收敛法判别法**：
+
+**M判别法**：   
+一致而且绝对收敛的一个充分而不必要条件。
+若在闭区域$\hat{\sigma} = \sigma + l$内$|f_k(z)| \leq M_k$（与$z$无关），而$\sum_{k=1}^{\infty} M_k$收敛，则$\sum_{k=1}^{\infty} f_k(z)$在$\sigma$上绝对而且一致收敛。
+
+### 幂级数
+形如$\sum_{k=0}^{\infty} a_k(z-b)^k$的级数。它是以$b$为中心的幂级数，$a_k(k=0, 1, 2, ...)$是复常数。  
+判定幂级数敛散性的定理——**阿贝尔定理(Abel)**
+
+若幂级数$\sum_{k=0}^{\infty} a_k(z-b)^k$在某点$z=z_0$处收敛，则$z$在$|z-b| < |z_0 - b|$ 内绝对收敛，在更小的闭圆$|z-b| \leq \rho$一致收敛。
+
+**收敛圆及收敛半径**：
+
+$R = lim_{k \rightarrow \infty} \frac{a_{k+1}}{a_k}$ R为收敛不收敛的分界线。
+
+由柯西的根值求法也可以得到半径：
+$$ R = lim_{k \rightarrow \infty} \frac{1}{\sqrt[k]{|a_k|}}$$
 
 
 

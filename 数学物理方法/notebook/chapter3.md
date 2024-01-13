@@ -89,11 +89,18 @@ $$ e^z = \sum_{k=0}^{\infty} \frac{1}{k!} z^k \quad |z| < \infty$$
 $$ (\sum_{k=0}^{\infty} a_k)(\sum_{k=0}^{\infty}b_k) = \sum_{k=0}^{\infty} c_k $$
 $$c_k = \sum_{n=0}^{k} a_n b_{n-k}$$
 
+### 洛朗级数
+形如$$\sum_{k=-\infty}^{\infty}c_k(z-b)^k = ... + c_{-2}(z-b)^{-2} + c_{-1}(z-b)^{-1} + c_0 + c_1(z-b)^1 + c_2(z-b)^2 + ... $$
+分为主部和正则部。
 
+**洛朗级数的收敛性定理**：  
+令$\xi = \frac{1}{z-b}$，则主部变为$
+\sum_{k=0}^{\infty} C_{-k} \xi^k$。设其收敛圆半径为$\frac{1}{\gamma}$，当$|\xi| < \frac{1}{\gamma}$时，$\sum_{k=0}^{\infty}C_{-k} \xi^k$收敛，$\Rightarrow$ 在$|z-b| > \gamma$主部$\sum_{k=-\infty}^{-1} c_k(z-b)^k$收敛，且在更大一点的圆$|z-b| = \gamma' > \gamma$之外一致收敛。
+对正则部$\sum_{k=0}^{\infty}c_k(z-b)^k$的收敛半径，在$|z-b| < R$内收敛，在更小一点的闭圆之内$|z-b|=R' < R$之内一致收敛。
 
+**洛朗定理**
 
-
-
-
-
-
+在环域$\gamma < |z-b| < R$内解析的函数$f(z)$必可被展开为洛朗级数。
+$$f(z) = \sum_{k=-\infty}^{\infty}C_k (z-b)^k$$
+其中$$ C_k = \frac{1}{2 \pi i} \oint_l \frac{f(\xi)}{(\xi - b)^{k+1}}$$
+$l$为圆周：$|z-b| = \rho$ ($\gamma < \gamma' < \rho < R' < R$)

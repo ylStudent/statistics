@@ -79,6 +79,16 @@ $$ R = lim_{k \rightarrow \infty} \frac{1}{\sqrt[k]{|a_k|}}$$
 ### 泰勒级数
 泰勒定理：设$f(z)$在区域$\sigma$内解析，则在$\sigma$内任意一点$z=\sigma$的邻域$|z-b|< R $（含于$\sigma$内)。则$f(z)$可以展开为泰勒级数：$f(z) = \sum_{k=0}^{\infty} a_k (z-b)^k$
 $$ a_k = \frac{1}{k!} f^{k}(b)$$
+几个常用的结论：
+$$ \frac{1}{1-z} = \sum_{k=0}^{\infty} z^k \quad |z| < 1$$
+$$ \frac{1}{1+z} = \sum_{k=0}^{\infty} (-1)^k z^k \quad |z| < 1$$
+$$ e^z = \sum_{k=0}^{\infty} \frac{1}{k!} z^k \quad |z| < \infty$$
+
+### 柯西乘积表
+对于两个绝对收敛的级数 $\sum_{k=0}^{\infty} a_k$，$\sum_{k=0}^{\infty}b_k$，其积满足柯西乘积表所给定的系数
+$$ (\sum_{k=0}^{\infty} a_k)(\sum_{k=0}^{\infty}b_k) = \sum_{k=0}^{\infty} c_k $$
+$$c_k = \sum_{n=0}^{k} a_n b_{n-k}$$
+
 
 
 
